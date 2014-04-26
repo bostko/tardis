@@ -1,0 +1,87 @@
+.container
+  .row
+    .col-lg-8
+      / the actual blog post: title/author/date/content
+      %h1 A Simple Blog Template for Bootstrap 3
+      %p.lead
+        by
+        %a{href: "index.php"} Start Bootstrap
+      %hr/
+      %p
+        %span.glyphicon.glyphicon-time
+        Posted on August 24, 2013 at 9:00 PM
+      %hr/
+      %img.img-responsive{src: "http://placehold.it/900x300"}/
+      %hr/
+      %p.lead Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.
+      %p You know, being a test pilot isn't always the healthiest business in the world.
+      %p Cookie jelly beans soufflé icing. Gummi bears tootsie roll powder chupa chups cheesecake chocolate jelly-o lollipop lollipop. Halvah applicake chupa chups. Marshmallow chocolate jujubes icing lollipop gummi bears chupa chups pudding bonbon. Jelly beans jelly soufflé jujubes. Sesame snaps lollipop icing donut lemon drops soufflé.
+      %p Donut caramels gingerbread. Sweet roll macaroon pastry cotton candy oat cake sesame snaps biscuit lemon drops dessert. Candy canes carrot cake danish carrot cake soufflé jelly chocolate cake muffin. Topping brownie donut. Oat cake marzipan dragée cheesecake. Donut chocolate cake jujubes tart dragée toffee.
+      %p Tilefish electric knifefish salmon shark southern Dolly Varden. Pacific argentine tope golden shiner ilisha barreleye loosejaw catla, dogteeth tetra catfish tenpounder nase scup Ragfish brotula." Codlet brook lamprey pleco, Japanese eel convict cichlid titan triggerfish, plownose chimaera topminnow Black scalyfin. Walleye pollock, blue shark Sacramento blackfish prickleback airbreathing catfish yellowfin cutthroat trout, goby southern sandfish. North Pacific daggertooth dorab cepalin weever flying gurnard.
+      %p
+        %strong Placeholder text by:
+      %ul
+        %li
+          %a{href: "http://spaceipsum.com/"} Space Ipsum
+        %li
+          %a{href: "http://cupcakeipsum.com/"} Cupcake Ipsum
+        %li
+          %a{href: "http://tunaipsum.com/"} Tuna Ipsum
+      %hr/
+      / the comment box
+      .well
+        %h4 Leave a Comment:
+        = render 'fb_comment'
+      %hr/
+      / the comments
+      %h3
+        Start Bootstrap
+        %small 9:41 PM on August 24, 2013
+      %p This has to be the worst blog post I have ever read. It simply makes no sense. You start off by talking about space or something, then you randomly start babbling about cupcakes, and you end off with random fish names.
+      %h3
+        Start Bootstrap
+        %small 9:47 PM on August 24, 2013
+      %p Don't listen to this guy, any blog with the categories 'dinosaurs, spaceships, fried foods, wild animals, alien abductions, business casual, robots, and fireworks' has true potential.
+    .col-lg-4
+      .well
+        %h4 Blog Search
+        .input-group
+          %input.form-control{type: "text"}/
+          %span.input-group-btn
+            %button.btn.btn-default{type: "button"}
+              %span.glyphicon.glyphicon-search
+      / /input-group
+      / /well
+      .well
+        %h4 Popular Blog Categories
+        .row
+          .col-lg-6
+            %ul.list-unstyled
+              %li
+                %a{href: "#dinosaurs"} Dinosaurs
+              %li
+                %a{href: "#spaceships"} Spaceships
+              %li
+                %a{href: "#fried-foods"} Fried Foods
+              %li
+                %a{href: "#wild-animals"} Wild Animals
+          .col-lg-6
+            %ul.list-unstyled
+              %li
+                %a{href: "#alien-abductions"} Alien Abductions
+              %li
+                %a{href: "#business-casual"} Business Casual
+              %li
+                %a{href: "#robots"} Robots
+              %li
+                %a{href: "#fireworks"} Fireworks
+      / /well
+      .well
+        %h4 Side Widget Well
+        %p Bootstrap's default wells work great for side widgets! What is a widget anyways...?
+      / /well
+  %hr/
+  %footer
+    .row
+      .col-lg-12
+        %p Copyright © Company 2013

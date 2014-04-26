@@ -1,10 +1,16 @@
-%h2 Home#index
-
-- @charities.each do |charity|
-  %li
-    = charity.title
-    = charity.description
-    = charity.goal
-    = charity.started_at
-    = charity.deadline
-    = image_tag(charity.avatar.url)
+.container
+  .row
+    .col-lg-12
+      .h1.page-header
+  - @charities.each do |charity|
+    .row
+      .col-lg-5.col-md-5
+        %a{href: "#"}
+          %img.img-responsive{alt: "", src: charity.avatar.url, width:458, height:257}/
+      .col-lg-7.col-md-7
+        = link_to "/#{charity.id}" do
+          %h3= charity.title
+        %p= charity.description
+        %a.btn.btn-primary{href: "#"}
+          Искам да помогна
+    %hr/

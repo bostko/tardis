@@ -7,7 +7,8 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
-    .navbar.navbar-inverse.navbar-fixed-top{role: "navigation"}
+    = render 'layouts/fb_head'
+    .navbar.navbar-inverse{role: "navigation"}
       .container
         .navbar-header
           %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", type: "button"}
