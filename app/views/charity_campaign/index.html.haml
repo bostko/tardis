@@ -5,12 +5,12 @@
   - @charities.each do |charity|
     .row
       .col-lg-5.col-md-5
-        %a{href: "#"}
+        %a{href: "/#{charity.id}"}
           %img.img-responsive{alt: "", src: charity.avatar.url, width:458, height:257}/
       .col-lg-7.col-md-7
         = link_to "/#{charity.id}" do
           %h3= charity.title
         %p= charity.description
-        %a.btn.btn-primary{href: "#"}
+        %a.btn.btn-primary{href: "/#{charity.id}"}
           Искам да помогна
     %hr/
