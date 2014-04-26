@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'charity_campaign#index'
   get '/:id' => 'charity_campaign#show'
+  get 'category/:id' => 'category#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
