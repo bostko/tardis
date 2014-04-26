@@ -1,4 +1,4 @@
-class CharityAccountTransaction
+class MoneyTransaction
   include Mongoid::Document
 
   field :transaction_type, type: String

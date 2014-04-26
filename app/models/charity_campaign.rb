@@ -13,6 +13,6 @@ class CharityCampaign
 
 
   has_one :charity_owner
-  has_many :charity_account_transactions
+  has_many :money_transactions
   has_many :categories
 end
