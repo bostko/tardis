@@ -18,4 +18,8 @@ class CharityCampaign
   def total_amount
     CharityAccountTransaction.where(charity_campaign: self).sum :amount
   end
+
+  def progress_bar_class
+    "progress-bar-#{if (charity_account_transactions.all.map(:amount).reduce(:+) / goal)* 100 < 50 then "danger" else "success" end}"
+  end
 end
