@@ -9,6 +9,8 @@ class CharityCampaign
   field :deadline, type: DateTime
 
   mount_uploader :avatar, CharityAvatarUploader
+  validates :avatar, :presence => true
+
 
   has_one :charity_owner
   has_many :charity_account_transactions

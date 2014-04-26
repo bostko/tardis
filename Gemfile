@@ -27,8 +27,11 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0',          group: :doc
-gem 'carrierwave'
+# gem 'sdoc', '~> 0.4.0',          group: :doc
+
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'carrierwave-mongoid', github: 'carrierwaveuploader/carrierwave-mongoid'
+gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
