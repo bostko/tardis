@@ -31,10 +31,7 @@
       / the comment box
       .well
         %h4 Leave a Comment:
-        %form{role: "form"}
-          .form-group
-            %textarea.form-control{rows: "3"}
-          %button.btn.btn-primary{type: "submit"} Submit
+        = render 'fb_comment'
       %hr/
       / the comments
       %h3
@@ -53,7 +50,7 @@
           %span.input-group-btn
             %button.btn.btn-default{type: "button"}
               %span.glyphicon.glyphicon-search
-        / /input-group
+      / /input-group
       / /well
       .well
         %h4 Popular Blog Categories
