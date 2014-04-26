@@ -3,6 +3,7 @@ require 'csv'
 CharityCampaign.delete_all
 Category.delete_all
 CharityOwner.delete_all
+CharityAccountTransaction.delete_all
 
 Category.create([
   {name: 'Здраве'},
@@ -44,3 +45,35 @@ CSV.foreach 'db/charity_campaigns.csv', headers: true do |row|
     ])
   charity.save
 end
+
+# Happy Endings
+CharityCampaign.create([
+  {
+    title: "Да помогнем на Мария",
+    description: "Да помогнем на едно малко дете да се пребори с болестта",
+    goal: 50000,
+    avatar: 'images.jpeg',
+    charity_account_transactions: CharityAccountTransaction.create([{amount: 50000, done_by: 'Петко Георгиев', transaction_type: 'transaction'}])
+  },
+  {
+    title: "Да помогнем на Иван",
+    description: "Да помогнем на едно малко дете да се пребори с болестта",
+    goal: 50000,
+    avatar: 'images.jpeg',
+    charity_account_transactions: CharityAccountTransaction.create([{amount: 50000, done_by: 'Петко Георгиев', transaction_type: 'transaction'}])
+  },
+  {
+    title: "Да почистим ФМИ",
+    description: "Да изхвърлим торбичките от кофите за боклук",
+    goal: 500,
+    avatar: 'images.jpeg',
+    charity_account_transactions: CharityAccountTransaction.create([{amount: 500, done_by: 'Петко Георгиев', transaction_type: 'transaction'}])
+  },
+  {
+    title: "Да дарим надежда",
+    description: "Да помогнем на едно младо момиче да се пребори с болестта",
+    goal: 20000,
+    avatar: 'images.jpeg',
+    charity_account_transactions: CharityAccountTransaction.create([{amount: 20000, done_by: 'Петко Георгиев', transaction_type: 'transaction'}])
+  },
+])
