@@ -7,6 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'csv'
 
+CharityCampaign.all.destroy
+Category.all.destroy
 
 CharityCampaign.delete_all
 Category.delete_all
