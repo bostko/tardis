@@ -1,0 +1,10 @@
+%h2 Home#index
+
+- @charities.each do |charity|
+  %li
+    = charity.title
+    = charity.description
+    = charity.goal
+    = charity.started_at
+    = charity.deadline
+    = image_tag(charity.avatar.url)

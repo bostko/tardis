@@ -1,4 +1,5 @@
 class CharityCampaignController < ApplicationController
-  def show
+  def index
+    @charities = CharityCampaign.all
   end
 end
