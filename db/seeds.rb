@@ -37,6 +37,10 @@ CSV.foreach 'db/charity_campaigns.csv', headers: true do |row|
   charity.charity_account_transactions.create([
     {amount: prng.rand(5000), done_by: 'Иван Георгиев', transaction_type: 'transaction'},
     {amount: prng.rand(5000), done_by: 'Иван Георгиев', transaction_type: 'transaction'},
+    {amount: prng.rand(1000), done_by: 'Иван Георгиев', transaction_type: 'transaction'},
+    {amount: prng.rand(2000), done_by: 'Иван Георгиев', transaction_type: 'transaction'},
+    {amount: prng.rand(100), done_by: 'Иван Георгиев', transaction_type: 'transaction'},
+    {amount: prng.rand(5000), done_by: 'Иван Георгиев', transaction_type: 'transaction'},
     ])
   charity.save
 end
