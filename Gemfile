@@ -7,6 +7,7 @@ gem 'haml-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
+gem 'tzinfo-data'
 
 # Mongo DB adapter gem
 gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
