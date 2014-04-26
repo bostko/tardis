@@ -6,5 +6,6 @@ class CharityCampaignController < ApplicationController
 
   def show
     @charity = CharityCampaign.find params[:id]
+    @categories = Category.all
   end
 end
