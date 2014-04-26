@@ -1,3 +1,6 @@
+#OS X Specific file
+.DS_Store
+
 *.rbc
 capybara-*.html
 .rspec
