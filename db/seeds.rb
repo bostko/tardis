@@ -8,9 +8,11 @@
 require 'csv'
 
 CharityCampaign.all.destroy
+Category.all.destroy
 
 CSV.foreach 'db/charity_campaigns.csv', headers: true do |row|
   pic = File.open Rails.root.join 'db', 'charity_photos', row['charity_photo']
-  CharityCampaign.create title: row['title'], description: row['description'], goal: row['goal'], avatar: pic
+  category = Category.find_or_create_by name: row['category']
+  CharityCampaign.create title: row['title'], description: row['description'], goal: row['goal'], avatar: pic, categories: [category]
 end
 

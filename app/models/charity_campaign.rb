@@ -14,5 +14,5 @@ class CharityCampaign
 
   has_one :charity_owner
   has_many :charity_account_transactions
-  has_many :categories
+  has_and_belongs_to_many :categories
 end
