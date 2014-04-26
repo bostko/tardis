@@ -11,8 +11,11 @@ class CharityCampaign
   mount_uploader :avatar, CharityAvatarUploader
   validates :avatar, :presence => true
 
-
   has_one :charity_owner
   has_many :charity_account_transactions
   has_and_belongs_to_many :categories, class_name: "Category"
+
+  def total_amount
+    CharityAccountTransaction.where(charity_campaign: self).sum :amount
+  end
 end
