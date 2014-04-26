@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'csv'
 
+CharityCampaign.all.destroy
 
 CSV.foreach 'db/charity_campaigns.csv', headers: true do |row|
   pic = File.open Rails.root.join 'db', 'charity_photos', row['charity_photo']
