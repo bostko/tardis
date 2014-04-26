@@ -3,13 +3,14 @@ class CharityCampaign
   include Mongoid::Timestamps
 
   field :title, type: String
-  field :destription, type: String
+  field :description, type: String
   field :goal, type: BigDecimal
-  field :starded_at, type: DateTime
+  field :started_at, type: DateTime
   field :deadline, type: DateTime
 
+  mount_uploader :avatar, CharityAvatarUploader
+
   has_one :charity_owner
-  has_many :money_transactions
+  has_many :charity_account_transactions
   has_many :categories
 end
-
