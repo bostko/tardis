@@ -8,8 +8,8 @@
   %hr
 
   %p
-    %span.glyphicon.glyphicon-time
-      - if @charity_campaign.deadline
+    - if @charity_campaign.deadline
+      %span.glyphicon.glyphicon-time
         %strong
           Краен срок:
           = @charity_campaign.deadline
