@@ -7,11 +7,13 @@ class CharityCampaign
 
   field :description, type: String
   field :goal, type: BigDecimal
+  validates_numericality_of :goal, greater_than: 1, presence: {message: 'Моля задайте сума'}
+
   field :started_at, type: DateTime
   field :deadline, type: DateTime
 
   mount_uploader :avatar, CharityAvatarUploader
-  # validates :avatar, presence: {message: 'Моля задайте картинка'}
+  validates :avatar, presence: {message: 'Моля задайте картинка'}
 
   has_one :charity_owner
   has_many :money_transactions, class_name: "MoneyTransaction"

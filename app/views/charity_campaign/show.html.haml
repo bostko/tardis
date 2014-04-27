@@ -15,7 +15,10 @@
           = @charity_campaign.deadline
 
   %hr/
-  %img.img-responsive{src: @charity_campaign.avatar.url, width:900, height:300}/
+  %p
+    %img.img-responsive{src: @charity_campaign.avatar.url, width:900, height:300}/
+    %br/
+    %br/
   %hr/
   .progress
     .progress-bar{"class" => @charity_campaign.progress_bar_class, "aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "#{@charity_campaign.progress_bar_current}", role: "progressbar", style: "width: #{@charity_campaign.progress_bar_current}%;"}

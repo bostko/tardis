@@ -26,7 +26,10 @@ class CharityCampaignController < ApplicationController
     pp = charity_campaign_params
     pp[:goal] = BigDecimal pp[:goal]
     @charity_campaign = CharityCampaign.new pp
-    # @charity_campaign.avatar = params[:avatar]
+    if params[:charity_campaign][:category_ids]
+      @charity_campaign.categories = [(Category.find params[:charity_campaign][:category_ids])]
+    end
+    @charity_campaign.avatar = params[:charity_campaign][:avatar] if params[:charity_campaign][:avatar]
     if @charity_campaign.save
       redirect_to @charity_campaign
     else
