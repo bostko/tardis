@@ -13,22 +13,83 @@ CharityCampaign.delete_all
 Category.delete_all
 MoneyTransaction.delete_all
 
-category = Category.create name: 'Здраве'
-Category.create name: 'Образование'
-Category.create name: 'Екология'
-Category.create name: 'Култура'
-Category.create name: 'Социална политика'
-
 transaction1 = MoneyTransaction.new done_by: "Иван Георгиев", amount: BigDecimal.new("10.5"), date: DateTime.now
 transaction2 = MoneyTransaction.new done_by: "Георги Захариев", amount: BigDecimal.new("110.5"), date: DateTime.now
 transaction3 = MoneyTransaction.new done_by: "Мария Пертова", amount: BigDecimal.new("-22.5"), date: DateTime.now
 transaction4 = MoneyTransaction.new done_by: "Филип Йорданов", amount: BigDecimal.new("100.0"), date: DateTime.now
 transaction5 = MoneyTransaction.new done_by: "Мария Петрова", amount: BigDecimal.new("-50"), date: DateTime.now
 
+Category.create([
+  {name: 'Здраве'},
+  {name: 'Образование'},
+  {name: 'Образование'},
+  {name: 'Екология'},
+  {name: 'Култура'},
+  {name: 'Социална политика'},
+]) 
+
+CharityOwner.create([
+  {name: 'Фондация Екообщност'},
+  {name: 'Иван Иванов'},
+  {name: 'Петър Георгиев'},
+  {name: 'Фондация Светът на Мария'},
+  {name: 'Фондация за нашите деца'},
+  {name: 'Екообщност'},
+  {name: 'Общество'},
+  {name: 'Мария Петкова'},
+  {name: 'Тодор Пасквалев'},
+  {name: 'БТВ'},
+])
+
+#prng = Random.new
+
 CSV.foreach 'db/charity_campaigns.csv', headers: true do |row|
   pic = File.open Rails.root.join 'db', 'charity_photos', row['charity_photo']
   charity = CharityCampaign.create title: row['title'], description: row['description'], goal: row['goal'], avatar: pic
   charity.categories << category
   charity.money_transactions = [transaction1, transaction2, transaction3, transaction4, transaction5]
+  Category.all.each do |category|
+    charity.categories << category
+  end
+#  charity.money_transactions.create([
+    #{amount: prng.rand(5000), done_by: 'Иван Георгиев', date: DateTime.now},
+    #{amount: prng.rand(5000), done_by: 'Иван Георгиев', date: DateTime.now},
+    #{amount: prng.rand(1000), done_by: 'Иван Георгиев', date: DateTime.now},
+    #{amount: prng.rand(2000), done_by: 'Иван Георгиев', date: DateTime.now},
+    #{amount: prng.rand(100), done_by: 'Иван Георгиев', date: DateTime.now},
+    #{amount: prng.rand(5000), done_by: 'Иван Георгиев', date: DateTime.now},
+    #])
   charity.save
 end
+
+# Happy Endings
+CharityCampaign.create([
+  {
+    title: "Да помогнем на Мария",
+    description: "Да помогнем на едно малко дете да се пребори с болестта",
+    goal: 50000,
+    avatar: 'images.jpeg',
+    money_transactions: CharityAccountTransaction.create([{amount: 50000, done_by: 'Петко Георгиев', date: DateTime.now}])
+  },
+  {
+    title: "Да помогнем на Иван",
+    description: "Да помогнем на едно малко дете да се пребори с болестта",
+    goal: 50000,
+    avatar: 'images.jpeg',
+    money_transactions: CharityAccountTransaction.create([{amount: 50000, done_by: 'Петко Георгиев', date: DateTime.now}])
+  },
+  {
+    title: "Да почистим ФМИ",
+    description: "Да изхвърлим торбичките от кофите за боклук",
+    goal: 500,
+    avatar: 'images.jpeg',
+    money_transactions: CharityAccountTransaction.create([{amount: 500, done_by: 'Петко Георгиев', date: DateTime.now}])
+  },
+  {
+    title: "Да дарим надежда",
+    description: "Да помогнем на едно младо момиче да се пребори с болестта",
+    goal: 20000,
+    avatar: 'images.jpeg',
+    money_transactions: CharityAccountTransaction.create([{amount: 20000, done_by: 'Петко Георгиев', date: DateTime.now}])
+  },
+])
