@@ -9,23 +9,25 @@ class TransactionList
 
   def expenses
     expense_transactions = @transactions.select(&:expense?)
-    if expense_transactions.any?
-      expense_transactions.map(&:amount).inject(BigDecimal.new("0.0"), &:+)
-    else
-      BigDecimal.new("0.0")
-    end
+    sum_transactions expense_transactions
   end
 
   def revenue
     profit_transactions = @transactions.select(&:profit?)
-    if profit_transactions.any?
-      profit_transactions.map(&:amount).inject(BigDecimal.new("0.0"), &:+)
-    else
-      BigDecimal.new("0.0")
-    end
+    sum_transactions profit_transactions
   end
 
   def total
-    @transactions.map(&:amount).inject(BigDecimal.new("0.0"), &:+)
+    sum_transactions @transactions
+  end
+
+  private
+
+  def sum_transactions(transactions)
+    if transactions.any?
+      transactions.map(&:amount).inject(BigDecimal.new("0.0"), &:+)
+    else
+      BigDecimal.new("0.0")
+    end
   end
 end
