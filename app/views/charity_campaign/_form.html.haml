@@ -8,6 +8,26 @@
       %br/
       %br/
 
+      = f.select :category_ids, Category.all.collect {|x| [x.name, x.id]}, {}
+
+      %br/
+      %br/
+
+      = f.number_field(:goal, class: 'form-control', :placeholder => "Цел")
+
+      %br/
+      %br/
+
+      = f.date_field(:deadline, class: 'form-control', :placeholder => "Дата")
+
+      %br/
+      %br/
+
+      = f.file_field :avatar
+
+      %br/
+      %br/
+
       = f.text_area(:description, class: 'form-control', :placeholder => "Описание", :cols => 20, :rows => 10)
 
       %br/
