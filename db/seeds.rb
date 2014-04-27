@@ -46,19 +46,10 @@ CharityOwner.create([
 CSV.foreach 'db/charity_campaigns.csv', headers: true do |row|
   pic = File.open Rails.root.join 'db', 'charity_photos', row['charity_photo']
   charity = CharityCampaign.create title: row['title'], description: row['description'], goal: row['goal'], avatar: pic
-  charity.categories << category
   charity.money_transactions = [transaction1, transaction2, transaction3, transaction4, transaction5]
   Category.all.each do |category|
     charity.categories << category
   end
-#  charity.money_transactions.create([
-    #{amount: prng.rand(5000), done_by: 'Иван Георгиев', date: DateTime.now},
-    #{amount: prng.rand(5000), done_by: 'Иван Георгиев', date: DateTime.now},
-    #{amount: prng.rand(1000), done_by: 'Иван Георгиев', date: DateTime.now},
-    #{amount: prng.rand(2000), done_by: 'Иван Георгиев', date: DateTime.now},
-    #{amount: prng.rand(100), done_by: 'Иван Георгиев', date: DateTime.now},
-    #{amount: prng.rand(5000), done_by: 'Иван Георгиев', date: DateTime.now},
-    #])
   charity.save
 end
 
@@ -67,29 +58,29 @@ CharityCampaign.create([
   {
     title: "Да помогнем на Мария",
     description: "Да помогнем на едно малко дете да се пребори с болестта",
-    goal: 50000,
+    goal: BigDecimal.new("50000"),
     avatar: 'images.jpeg',
-    money_transactions: CharityAccountTransaction.create([{amount: 50000, done_by: 'Петко Георгиев', date: DateTime.now}])
+    money_transactions: MoneyTransaction.create([{amount: BigDecimal.new("50000"), done_by: 'Петко Георгиев', date: DateTime.now}])
   },
   {
     title: "Да помогнем на Иван",
     description: "Да помогнем на едно малко дете да се пребори с болестта",
-    goal: 50000,
+    goal: BigDecimal.new("50000"),
     avatar: 'images.jpeg',
-    money_transactions: CharityAccountTransaction.create([{amount: 50000, done_by: 'Петко Георгиев', date: DateTime.now}])
+    money_transactions: MoneyTransaction.create([{amount: BigDecimal.new("50000"), done_by: 'Петко Георгиев', date: DateTime.now}])
   },
   {
     title: "Да почистим ФМИ",
     description: "Да изхвърлим торбичките от кофите за боклук",
-    goal: 500,
+    goal: BigDecimal.new("500"),
     avatar: 'images.jpeg',
-    money_transactions: CharityAccountTransaction.create([{amount: 500, done_by: 'Петко Георгиев', date: DateTime.now}])
+    money_transactions: MoneyTransaction.create([{amount: BigDecimal.new("500"), done_by: 'Петко Георгиев', date: DateTime.now}])
   },
   {
     title: "Да дарим надежда",
     description: "Да помогнем на едно младо момиче да се пребори с болестта",
-    goal: 20000,
+    goal: BigDecimal.new("20000"),
     avatar: 'images.jpeg',
-    money_transactions: CharityAccountTransaction.create([{amount: 20000, done_by: 'Петко Георгиев', date: DateTime.now}])
+    money_transactions: MoneyTransaction.create([{amount: BigDecimal.new("20000"), done_by: 'Петко Георгиев', date: DateTime.now}])
   },
 ])
