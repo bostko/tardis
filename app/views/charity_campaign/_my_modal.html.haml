@@ -1,0 +1,40 @@
+- [1, 10, 100].each do |amount|
+  %div.modal.fade{id: "myModal#{amount}", "aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+    .modal-dialog
+      .modal-content
+        = form_for @money_transaction do |f|
+          .modal-header
+            %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+            %h4#myModalLabel.modal-title="Дари #{amount} лв"
+          .modal-body
+            %fieldset
+              %ul.list-unstyled
+                %li
+                  = f.label :done_by, 'Име: '
+                  = f.text_field :done_by
+            = hidden_field(:money_transaction, :amount, :value => amount)
+            = hidden_field(:money_transaction, :charity_campaign_id, :value => @charity.id)
+          .modal-footer
+            %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Затрвори
+            %button.btn.btn-primary{type: "submit"} Дари
+
+#myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog
+    .modal-content
+      = form_for @money_transaction do |f|
+        .modal-header
+          %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+          %h4#myModalLabel.modal-title Направи дарение
+        .modal-body
+          %fieldset
+            %ul.list-unstyled
+              %li
+                = f.label :done_by, 'Име: '
+                = f.text_field :done_by
+              %li
+                = f.label :amount, 'Сума: '
+                = f.text_field :amount
+            = hidden_field(:money_transaction, :charity_campaign_id, :value => @charity.id)
+        .modal-footer
+          %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Затрвори
+          %button.btn.btn-primary{type: "submit"} Дари

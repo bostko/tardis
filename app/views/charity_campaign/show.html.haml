@@ -19,73 +19,7 @@
       %img{src: 'assets/plus.png', width:40, height:40, "data-target" => "#myModal", "data-toggle" => "modal"}/
       %a{href: "", "data-target" => "#myModal", "data-toggle" => "modal"} Дари от сърце
   %hr/
-  #myModal1.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
-    .modal-dialog
-      .modal-content
-        %form{ :action => "", :method => "post"}
-          .modal-header
-            %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-            %h4#myModalLabel.modal-title Дари 1 лв
-          .modal-body
-            %fieldset
-              %ul.list-unstyled
-                %li
-                  %label{:for => "name"} Име:
-                  %input{:type => "text", :name => "name", :class => "text"}
-          .modal-footer
-            %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Затрвори
-            %button.btn.btn-primary{type: "submit"} Дари
-  #myModal10.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
-    .modal-dialog
-      .modal-content
-        %form{ :action => "", :method => "post"}
-          .modal-header
-            %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-            %h4#myModalLabel.modal-title Дари 10 лв
-          .modal-body
-            %fieldset
-              %ul.list-unstyled
-                %li
-                  %label{:for => "name"} Име:
-                  %input{:type => "text", :name => "name", :class => "text"}
-          .modal-footer
-            %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Затрвори
-            %button.btn.btn-primary{type: "submit"} Дари
-  #myModal100.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
-    .modal-dialog
-      .modal-content
-        %form{ :action => "", :method => "post"}
-          .modal-header
-            %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-            %h4#myModalLabel.modal-title Дари 100 лв
-          .modal-body
-            %fieldset
-              %ul.list-unstyled
-                %li
-                  %label{:for => "name"} Име:
-                  %input{:type => "text", :name => "name", :class => "text"}
-          .modal-footer
-            %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Затрвори
-            %button.btn.btn-primary{type: "submit"} Дари
-  #myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
-    .modal-dialog
-      .modal-content
-        %form{ :action => "/", :method => "post"}
-          .modal-header
-            %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-            %h4#myModalLabel.modal-title Направи дарение
-          .modal-body
-            %fieldset
-              %ul.list-unstyled
-                %li
-                  %label{:for => "name"} Име:
-                  %input{:type => "text", :name => "name", :class => "text"}
-                %li
-                  %label{:for => "name"} Сума:
-                  %input{:type => "text", :name => "amount", :class => "text"}
-          .modal-footer
-            %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Затрвори
-            %button.btn.btn-primary{type: "submit"} Дари
+  = render 'my_modal'
   %ul.nav.nav-tabs
     %li.active.information-tab
       %a.information-button{href: "#"} Информация
