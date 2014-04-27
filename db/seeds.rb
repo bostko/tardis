@@ -14,7 +14,6 @@ transaction5 = MoneyTransaction.new done_by: "Мария Петрова", amount
 Category.create([
   {name: 'Здраве'},
   {name: 'Образование'},
-  {name: 'Образование'},
   {name: 'Екология'},
   {name: 'Култура'},
   {name: 'Социална политика'},
