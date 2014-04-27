@@ -1,3 +1,5 @@
+require_relative '../models/transactions_list.rb'
+
 class CharityCampaignController < ApplicationController
   def index
     @charities = CharityCampaign.all.select {|x| x.total_amount < x.goal}
