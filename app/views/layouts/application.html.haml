@@ -24,4 +24,23 @@
               %a{href: "#about"} About
             %li
               %a{href: "#contact"} Contact
-    = yield
+    .container
+      = yield
+      .col-lg-3
+        .well
+          %h4 Категории
+          %ul.list-unstyled
+            - @categories.each do |category|
+              %li
+                %a{href: "category/#{category.id}"}= category.name
+        .well
+          = link_to "happy-story" do
+            %h4 Шастливи развръзки
+          %ul.list-unstyled
+            - @happy_endings.each do |happy_end|
+              %li
+                %a{href: "/#{happy_end.id}"}= happy_end.title
+      %footer
+        .row
+          .col-lg-12
+            %p Copyright © Tardis 2014

@@ -1,29 +1,17 @@
-.container
-  .col-lg-9
-    %hr/
-    - @charities.each do |charity|
-      .row
-        .col-lg-5.col-md-5
-          %a{href: "/#{charity.id}"}
-            %img.img-responsive{alt: "", src: charity.avatar.url, width:458, height:257}/
-        .col-lg-7.col-md-7
-          = link_to "/#{charity.id}" do
-            %h3= charity.title
-          .progress
-            .progress-bar{"class" => charity.progress_bar_class, "aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "#{charity.progress_bar_current}", role: "progressbar", style: "width: #{charity.progress_bar_current}%;"}
-              =charity.goal - charity.progress_bar_current
-          %p= charity.description
-          %a.btn.btn-primary{href: "/#{charity.id}"}
-            Искам да помогна
-      %hr/
-  .col-lg-3
-    .well
-      %h4 Категории
-      %ul.list-unstyled
-        - @categories.each do |category|
-          %li
-            %a{href: "category/#{category.id}"}= category.name
-  %footer
+.col-lg-9
+  %hr/
+  - @charities.each do |charity|
     .row
-      .col-lg-12
-        %p Copyright © Tardis 2014
+      .col-lg-5.col-md-5
+        %a{href: "/#{charity.id}"}
+          %img.img-responsive{alt: "", src: charity.avatar.url, width:458, height:257}/
+      .col-lg-7.col-md-7
+        = link_to "/#{charity.id}" do
+          %h3= charity.title
+        .progress
+          .progress-bar{"class" => charity.progress_bar_class, "aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "#{charity.progress_bar_current}", role: "progressbar", style: "width: #{charity.progress_bar_current}%;"}
+            =charity.goal - charity.progress_bar_current
+        %p= charity.description
+        %a.btn.btn-primary{href: "/#{charity.id}"}
+          Искам да помогна
+    %hr/
