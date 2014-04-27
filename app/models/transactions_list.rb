@@ -1,5 +1,3 @@
-require 'bigdecimal'
-
 class TransactionList
   attr_reader :transactions
 

@@ -1,5 +1,3 @@
-require 'bigdecimal'
-
 class CharityCampaign
   include Mongoid::Document
   include Mongoid::Timestamps
