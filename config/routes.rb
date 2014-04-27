@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
   get '/money_transaction/:id' => 'money_transaction#index'
-  root 'charity_campaign#index'
+  root 'charity_campaign#index', as: :charity_campaigns
+
   get 'happy-story' => 'charity_campaign#happy'
-  get '/:id' => 'charity_campaign#show'
   get 'category/:id' => 'category#show'
+
+  get '/:id' => 'charity_campaign#show', as: :charity_campaign
+
+  post '/' => 'charity_campaign#create', as: :create_charity_campaign
+  get '/charity_campaign/new' => 'charity_campaign#new', as: :new_charity_campaign
+  # post '/charity_campaign/create' => 'charity_campaign#create', as: :create_charity_campaign
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
