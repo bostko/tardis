@@ -9,6 +9,10 @@ Rails.application.routes.draw do
 
   post '/' => 'charity_campaign#create', as: :create_charity_campaign
   get '/charity_campaign/new' => 'charity_campaign#new', as: :new_charity_campaign
+
+  get '/money_transactions' => 'money_transaction#list', as: :money_transactions
+  post '/money_transactions' => 'money_transaction#create', as: :create_money_transactions
+
   # post '/charity_campaign/create' => 'charity_campaign#create', as: :create_charity_campaign
 
   # The priority is based upon order of creation: first created -> highest priority.

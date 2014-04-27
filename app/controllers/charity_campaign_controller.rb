@@ -8,6 +8,8 @@ class CharityCampaignController < ApplicationController
   def show
     @charity = CharityCampaign.find params[:id]
     @transaction_list = TransactionList.new @charity.money_transactions
+
+    @money_transaction = MoneyTransaction.new
   end
 
   def happy
