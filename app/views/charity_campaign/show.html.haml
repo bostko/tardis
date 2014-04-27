@@ -4,10 +4,13 @@
   %hr/
   %p
     %span.glyphicon.glyphicon-time
-    Started on August 24, 2013 at 9:00 PM
+    =@charity.created_at
   %hr/
   %img.img-responsive{src: @charity.avatar.url, width:900, height:300}/
   %hr/
+  .progress
+    .progress-bar{"class" => @charity.progress_bar_class, "aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "#{@charity.progress_bar_current}", role: "progressbar", style: "width: #{@charity.progress_bar_current}%;"}
+      %span= "#{@charity.total_amount} / #{@charity.goal} лв."
   %ul.nav.nav-tabs
     %li.active.information-tab
       %a.information-button{href: "#"} Информация

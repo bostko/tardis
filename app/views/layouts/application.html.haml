@@ -30,7 +30,7 @@
           %ul.list-unstyled
             - @categories.each do |category|
               %li
-                %a{href: "category/#{category.id}"}= category.name
+                %a{href: "/category/#{category.id}"}= category.name
         .well
           = link_to "happy-story" do
             %h4 Щастливи развръзки
