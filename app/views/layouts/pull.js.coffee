@@ -1,0 +1,1 @@
+alert '<%= @pull_result %>'

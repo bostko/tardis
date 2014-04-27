@@ -11,4 +11,9 @@ class ApplicationController < ActionController::Base
   def happy_endings
   	@happy_endings = CharityCampaign.all.select{|x| x.total_amount >= x.goal}.take 3
   end
+
+  def pull
+    @pull_result = `git pull`
+    render 'layouts/pull.js'
+  end
 end
