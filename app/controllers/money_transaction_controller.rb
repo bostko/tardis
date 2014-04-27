@@ -1,6 +1,3 @@
-require 'bigdecimal'
-require './app/models/transactions_list.rb'
-
 class MoneyTransactionController < ApplicationController
   def index
     charity_campaign = CharityCampaign.find params[:id]

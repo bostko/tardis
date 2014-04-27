@@ -1,5 +1,3 @@
-require 'bigdecimal'
-
 class MoneyTransaction
   include Mongoid::Document
 
