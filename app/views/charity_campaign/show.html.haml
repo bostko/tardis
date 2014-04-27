@@ -11,15 +11,16 @@
   .progress
     .progress-bar{"class" => @charity.progress_bar_class, "aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "#{@charity.progress_bar_current}", role: "progressbar", style: "width: #{@charity.progress_bar_current}%;"}
       %span= "#{@charity.total_amount} / #{@charity.goal} лв."
-  %ul.list-unstyled
-    %li
-      - [1, 10, 100].each do |amount|
-        %img{src: 'assets/plus.png', width:40, height:40, "data-target" => "#myModal#{amount}", "data-toggle" => "modal"}/
-        %a{href: "", "data-target" => "#myModal#{amount}", "data-toggle" => "modal"} Дари #{amount} лв
-      %img{src: 'assets/plus.png', width:40, height:40, "data-target" => "#myModal", "data-toggle" => "modal"}/
-      %a{href: "", "data-target" => "#myModal", "data-toggle" => "modal"} Дари от сърце
-  %hr/
-  = render 'my_modal'
+  - if @charity.total_amount < @charity.goal
+    %ul.list-unstyled
+      %li
+        - [1, 10, 100].each do |amount|
+          %img{src: 'assets/plus.png', width:40, height:40, "data-target" => "#myModal#{amount}", "data-toggle" => "modal"}/
+          %a{href: "", "data-target" => "#myModal#{amount}", "data-toggle" => "modal"} Дари #{amount} лв
+        %img{src: 'assets/plus.png', width:40, height:40, "data-target" => "#myModal", "data-toggle" => "modal"}/
+        %a{href: "", "data-target" => "#myModal", "data-toggle" => "modal"} Дари от сърце
+    %hr/
+    = render 'my_modal'
   %ul.nav.nav-tabs
     %li.active.information-tab
       %a.information-button{href: "#"} Информация
