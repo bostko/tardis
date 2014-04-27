@@ -10,12 +10,45 @@
       %hr/
       %img.img-responsive{src: @charity.avatar.url, width:900, height:300}/
       %hr/
-      %p.lead
-        = @charity.title
-      %p
-        = @charity.description
-      %p
+      %ul.nav.nav-tabs
+        %li.active.information-tab
+          %a.information-button{href: "#"} Информация
+        %li.clarity-tab
+          %a.clarity-button{href: "#"} Прозрачност
       %hr/
+      .description
+        %p.lead
+          = @charity.title
+        %p
+          = @charity.description
+        %p
+        %hr/
+      .money-container.hidden
+        .row
+          .col-lg-6
+            %h3= "Събрана сума: #{@transaction_list.revenue} лв."
+            %h3= "Похарчена сума: #{@transaction_list.expenses.abs} лв."
+          .col-lg-6
+            %h3= "Баланс: #{@transaction_list.total} лв."
+          .col-lg-12
+            .h1.page-header
+        - @transaction_list.transactions.each do |transaction|
+          .row
+            .col-lg-1
+              - if transaction.expense?
+                = image_tag("minus.png", size: "64x64")
+              - else
+                = image_tag("plus.png", size: "64x64")
+            .col-lg-11
+              = link_to "#" do
+                - if transaction.expense?
+                  %h4= "#{transaction.done_by} използва #{transaction.amount.abs} лв."
+                - else
+                  %h4= "#{transaction.done_by} дари #{transaction.amount} лв."
+                %p= "на #{transaction.date}"
+
+            .col-lg-12
+              .h1.page-header
       .well
         %h4 Оставете коментар:
         = render 'fb_comment'
