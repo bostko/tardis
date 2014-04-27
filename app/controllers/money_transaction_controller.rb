@@ -6,4 +6,8 @@ class MoneyTransactionController < ApplicationController
     charity_campaign = CharityCampaign.find params[:id]
     @transaction_list = TransactionList.new charity_campaign.money_transactions
   end
+
+  def new
+  	@money_transaction = MoneyTransaction.new
+  end
 end
