@@ -1,7 +1,11 @@
 .col-lg-8
   / the actual blog post: title/author/date/content
-  %h1=@charity.title
+  %h1
+    =@charity.title
+    %div{style: 'float: right'}
+      = render 'fb_share'
   %hr/
+
   %p
     %span.glyphicon.glyphicon-time
     =@charity.created_at
