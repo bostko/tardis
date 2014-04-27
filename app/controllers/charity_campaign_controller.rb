@@ -11,6 +11,6 @@ class CharityCampaignController < ApplicationController
   end
 
   def happy
-    @happy_endings = CharityCampaign.all.select {|x| x.total_amount >= x.goal}
+    @happy_stories = CharityCampaign.all.select {|x| x.total_amount >= x.goal}
   end
 end
