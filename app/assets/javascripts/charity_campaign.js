@@ -1,5 +1,5 @@
-$(function() {
-    $('.information-button').bind('click', function (e) {
+$(document).ready(function() {
+    $('.information-button').click(function (e) {
       e.preventDefault();
       $('.information-tab').addClass('active');
       $('.clarity-tab').removeClass('active');
@@ -7,7 +7,7 @@ $(function() {
       $('.money-container').addClass('hidden');
     });
 
-    $('.clarity-button').bind('click', function (e) {
+    $('.clarity-button').click(function (e) {
       e.preventDefault();
       $('.information-tab').removeClass('active');
       $('.clarity-tab').addClass('active');
