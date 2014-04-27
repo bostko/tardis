@@ -1,10 +1,10 @@
 .container
   .row
     .col-lg-6
-      %h3= "Събрана сума: #{@transaction_list.revenue}"
-      %h3= "Похарчена сума: #{@transaction_list.expenses}"
+      %h3= "Събрана сума: #{@transaction_list.revenue} лв."
+      %h3= "Похарчена сума: #{@transaction_list.expenses.abs} лв."
     .col-lg-6
-      %h3= "Баланс: #{@transaction_list.total}"
+      %h3= "Баланс: #{@transaction_list.total} лв."
     .col-lg-12
       .h1.page-header
   - @transaction_list.transactions.each do |transaction|
@@ -17,9 +17,9 @@
       .col-lg-11
         = link_to "#" do
           - if transaction.expense?
-            %h4= "#{transaction.done_by} използва #{transaction.amount}"
+            %h4= "#{transaction.done_by} използва #{transaction.amount.abs} лв."
           - else
-            %h4= "#{transaction.done_by} дари #{transaction.amount}"
+            %h4= "#{transaction.done_by} дари #{transaction.amount} лв."
           %p= "на #{transaction.date}"
 
       .col-lg-12
