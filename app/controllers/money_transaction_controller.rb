@@ -1,5 +1,3 @@
-require_relative '../models/transactions_list.rb'
-
 class MoneyTransactionController < ApplicationController
   def index
     charity_campaign = CharityCampaign.find params[:id]
