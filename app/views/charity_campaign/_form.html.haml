@@ -2,12 +2,18 @@
   .row
     %h1 Създай кампания
     %hr/
-    = form_for @charity_campaign do |f|
+    = form_for @charity_campaign, :html => {:multipart => true} do |f|
+      - if @charity_campaign.errors[:title]
+        %label.control-label
+          = @charity_campaign.errors[:title].join ', '
       = f.text_field(:title, class: 'form-control', :placeholder => "Име на кампанията")
 
       %br/
       %br/
 
+      - if @charity_campaign.errors[:category_ids]
+        %label.control-label
+          = @charity_campaign.errors[:category_ids].join ', '
       = f.select :category_ids, Category.all.collect {|x| [x.name, x.id]}, {}
 
       %br/
@@ -23,10 +29,14 @@
       %br/
       %br/
 
-      = f.file_field :avatar
-
-      %br/
-      %br/
+      -#- if @charity_campaign.errors[:avatar]
+      -#  %label.control-label
+      -#    = @charity_campaign.errors[:avatar].join ', '
+      -#= f.file_field :avatar
+      -#= f.hidden_field :avatar_cache
+      -#
+      -#%br/
+      -#%br/
 
       = f.text_area(:description, class: 'form-control', :placeholder => "Описание", :cols => 20, :rows => 10)
 

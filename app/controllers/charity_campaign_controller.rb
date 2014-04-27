@@ -18,10 +18,17 @@ class CharityCampaignController < ApplicationController
     @charity_campaign = CharityCampaign.new
   end
 
+  def upload_avatar
+
+  end
+
   def create
-    charity_campaign = CharityCampaign.new(charity_campaign_params)
-    if charity_campaign.save
-      redirect_to charity_campaign
+    pp = charity_campaign_params
+    pp[:goal] = BigDecimal pp[:goal]
+    @charity_campaign = CharityCampaign.new pp
+    # @charity_campaign.avatar = params[:avatar]
+    if @charity_campaign.save
+      redirect_to @charity_campaign
     else
       render :new
     end
@@ -30,6 +37,6 @@ class CharityCampaignController < ApplicationController
   private
 
   def charity_campaign_params
-    params.require(:charity_campaign).permit(:title, :description)
+    params.require(:charity_campaign).permit(:title, :description, :goal, :deadline)
   end
 end

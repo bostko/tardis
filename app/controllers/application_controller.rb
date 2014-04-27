@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   def happy_endings
-  	@happy_endings = CharityCampaign.all.select{|x| x.total_amount >= x.goal}.take 3
+  	@happy_endings = CharityCampaign.all.shuffle.select{|x| x.total_amount >= x.goal}
   end
 
   def pull
