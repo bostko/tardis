@@ -47,29 +47,29 @@ end
 # Happy Endings
 CharityCampaign.create([
   {
-    title: "Да помогнем на Мария",
-    description: "Да помогнем на едно малко дете да се пребори с болестта. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.",
+    title: "Да помогнем на Мария Валентинова",
+    description: "Търсенето продължава...28 човека,които всеки месец да превеждат по сметката на Мария(IBAN:BG20CECB979041A6284900)-10 лв. Колко ще опитат да бъдат отговорни към друг човек и колко време ще продължат да бъдат?",
     goal: BigDecimal.new("50000"),
-    avatar: (File.open Rails.root.join 'db', 'charity_photos', 'images.jpeg'),
+    avatar: (File.open Rails.root.join 'db', 'charity_photos', 'Image_2243269_126.jpg'),
     money_transactions: MoneyTransaction.create([{amount: BigDecimal.new("50000"), done_by: 'Петко Георгиев', date: DateTime.now}])
   },
   {
-    title: "Да помогнем на Иван",
-    description: "Да помогнем на едно малко дете да се пребори с болестта. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.",
-    goal: BigDecimal.new("50000"),
-    avatar: (File.open Rails.root.join 'db', 'charity_photos', 'images.jpeg'),
-    money_transactions: MoneyTransaction.create([{amount: BigDecimal.new("50000"), done_by: 'Петко Георгиев', date: DateTime.now}])
+    title: "Да изчистим Велико Търново!",
+    description: " Не бъди безразличен! Включи се в общото ни усилие да направим Велико Търново още по-чист, по-красив и по-приветлив град. Очакваме да проявите вашата гражданска активност и енергия и заедно да осъществим една значима и полезна инициатива. ",
+    goal: BigDecimal.new("1000"),
+    avatar: (File.open Rails.root.join 'db', 'charity_photos', 'test.slider-1.jpg'),
+    money_transactions: MoneyTransaction.create([{amount: BigDecimal.new("1000"), done_by: 'Петко Георгиев', date: DateTime.now}])
   },
   {
     title: "Да почистим ФМИ",
-    description: "Да изхвърлим торбичките от кофите за боклук. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.",
+    description: "Да изхвърлим торбичките от кофите за боклук.",
     goal: BigDecimal.new("500"),
-    avatar: (File.open Rails.root.join 'db', 'charity_photos', 'images.jpeg'),
+    avatar: (File.open Rails.root.join 'db', 'charity_photos', 'IMG_3267.jpg'),
     money_transactions: MoneyTransaction.create([{amount: BigDecimal.new("500"), done_by: 'Петко Георгиев', date: DateTime.now}])
   },
   {
     title: "Да дарим надежда",
-    description: "Да помогнем на едно младо момиче да се пребори с болестта. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.",
+    description: "Да помогнем на едно малко дете да се пребори с болестта.",
     goal: BigDecimal.new("20000"),
     avatar: (File.open Rails.root.join 'db', 'charity_photos', 'images.jpeg'),
     money_transactions: MoneyTransaction.create([{amount: BigDecimal.new("20000"), done_by: 'Петко Георгиев', date: DateTime.now}])
