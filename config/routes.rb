@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get '/money_transaction/:id' => 'money_transaction#index'
   root 'charity_campaign#index'
+  get 'happy-story' => 'charity_campaign#happy'
   get '/:id' => 'charity_campaign#show'
   get 'category/:id' => 'category#show'
 
