@@ -1,13 +1,11 @@
-require_relative '../models/transactions_list.rb'
-
 class CharityCampaignController < ApplicationController
   def index
     @charities = CharityCampaign.all.select {|x| x.total_amount < x.goal}
   end
 
   def show
-    @charity = CharityCampaign.find params[:id]
-    @transaction_list = TransactionList.new @charity.money_transactions
+    @charity_campaign = CharityCampaign.find params[:id]
+    @transaction_list = TransactionList.new @charity_campaign.money_transactions
 
     @money_transaction = MoneyTransaction.new
   end
@@ -22,11 +20,11 @@ class CharityCampaignController < ApplicationController
 
   def create
     charity_campaign = CharityCampaign.new(charity_campaign_params)
-    charity_campaign.save
-
-    puts charity_campaign.errors.full_messages
-
-    redirect_to charity_campaign
+    if charity_campaign.save
+      redirect_to charity_campaign
+    else
+      render :new
+    end
   end
 
   private

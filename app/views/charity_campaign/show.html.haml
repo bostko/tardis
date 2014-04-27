@@ -1,17 +1,17 @@
 .col-lg-8
   / the actual blog post: title/author/date/content
-  %h1=@charity.title
+  %h1=@charity_campaign.title
   %hr/
   %p
     %span.glyphicon.glyphicon-time
-    =@charity.created_at
+    =@charity_campaign.created_at
   %hr/
-  %img.img-responsive{src: @charity.avatar.url, width:900, height:300}/
+  %img.img-responsive{src: @charity_campaign.avatar.url, width:900, height:300}/
   %hr/
   .progress
-    .progress-bar{"class" => @charity.progress_bar_class, "aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "#{@charity.progress_bar_current}", role: "progressbar", style: "width: #{@charity.progress_bar_current}%;"}
-      %span= "#{@charity.total_amount} / #{@charity.goal} лв."
-  - if @charity.total_amount < @charity.goal
+    .progress-bar{"class" => @charity_campaign.progress_bar_class, "aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "#{@charity_campaign.progress_bar_current}", role: "progressbar", style: "width: #{@charity_campaign.progress_bar_current}%;"}
+      %span= "#{@charity_campaign.total_amount} / #{@charity_campaign.goal} лв."
+  - if @charity_campaign.total_amount < @charity_campaign.goal
     %ul.list-unstyled
       %li
         - [1, 10, 100].each do |amount|
@@ -29,9 +29,9 @@
   %hr/
   .description
     %p.lead
-      = @charity.title
+      = @charity_campaign.title
     %p
-      = @charity.description
+      = @charity_campaign.description
     %p
     %hr/
   .money-container.hidden
