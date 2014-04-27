@@ -1,10 +1,17 @@
-= form_for @charity_campaign do |f|
-  = f.label :title
-  = f.text_field :title
-  %br
+.col-lg-9
+  .row
+    %h1 Създай кампания
+    %hr/
+    = form_for @charity_campaign do |f|
+      = f.text_field(:title, class: 'form-control', :placeholder => "Име на кампанията")
 
-  = f.label :description
-  = f.text_field :description
-  %br
+      %br/
+      %br/
 
-  = f.submit
+      = f.text_area(:description, class: 'form-control', :placeholder => "Описание", :cols => 20, :rows => 10)
+
+      %br/
+      %br/
+
+      = f.submit(class: "btn btn-default")
+    %hr/
