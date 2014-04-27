@@ -1,6 +1,6 @@
 class CharityCampaignController < ApplicationController
   def index
-    @charities = CharityCampaign.all.select {|x| x.total_amount < x.goal}
+    @charities = CharityCampaign.all.shuffle.select {|x| x.total_amount < x.goal}
   end
 
   def show
