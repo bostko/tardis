@@ -21,9 +21,7 @@
           %ul.nav.navbar-nav
             -#%li.active
             %li
-              %a{href: "#about"} About
-            %li
-              %a{href: "#contact"} Contact
+              %a{href: "happy-story"} Щастливи развръзки
     .container
       = yield
       .col-lg-3
@@ -35,7 +33,7 @@
                 %a{href: "category/#{category.id}"}= category.name
         .well
           = link_to "happy-story" do
-            %h4 Шастливи развръзки
+            %h4 Щастливи развръзки
           %ul.list-unstyled
             - @happy_endings.each do |happy_end|
               %li

@@ -9,6 +9,6 @@ class ApplicationController < ActionController::Base
   end
 
   def happy_endings
-  	@happy_endings = CharityCampaign.all.select {|x| x.total_amount >= x.goal}
+  	@happy_endings = CharityCampaign.all.select{|x| x.total_amount >= x.goal}.take 3
   end
 end
