@@ -1,0 +1,14 @@
+.col-lg-9
+  %hr/
+  - @happy_endings.each do |happy_end|
+    .row
+      .col-lg-5.col-md-5
+        %a{href: "/#{happy_end.id}"}
+          %img.img-responsive{alt: "", src: happy_end.avatar.url, width:458, height:257}/
+      .col-lg-7.col-md-7
+        = link_to "/#{happy_end.id}" do
+          %h3= happy_end.title
+        %p= happy_end.description
+        %a.btn.btn-primary{href: "/#{happy_end.id}"}
+          Искам да помогна
+    %hr/
