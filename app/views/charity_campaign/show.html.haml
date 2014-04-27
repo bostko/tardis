@@ -4,11 +4,16 @@
     =@charity_campaign.title
     %div{style: 'float: right'}
       = render 'fb_share'
-  %hr/
+  =@charity_campaign.created_at
+  %hr
 
   %p
     %span.glyphicon.glyphicon-time
-    =@charity_campaign.created_at
+      - if @charity_campaign.deadline
+        %strong
+          Краен срок:
+          = @charity_campaign.deadline
+
   %hr/
   %img.img-responsive{src: @charity_campaign.avatar.url, width:900, height:300}/
   %hr/
