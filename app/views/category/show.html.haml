@@ -10,8 +10,8 @@
           = link_to "/#{charity.id}" do
             %h3= charity.title
           .progress
-            .progress-bar{"class" => "progress-bar-#{if (charity.charity_account_transactions.all.map(:amount).reduce(:+) / charity.goal)* 100 < 50 then "danger" else "success" end}", "aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "#{(charity.charity_account_transactions.all.map(:amount).reduce(:+) / charity.goal)* 100}", role: "progressbar", style: "width: #{(charity.charity_account_transactions.all.map(:amount).reduce(:+) / charity.goal)* 100}%;"}
-              =charity.goal - charity.charity_account_transactions.all.map(:amount).reduce(:+)
+            .progress-bar{"class" => charity.progress_bar_class, "aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "#{charity.progress_bar_current}", role: "progressbar", style: "width: #{charity.progress_bar_current}%;"}
+              =charity.goal - charity.progress_bar_current
           %p= charity.description
           %a.btn.btn-primary{href: "/#{charity.id}"}
             Искам да помогна
